@@ -1,21 +1,8 @@
 var mongoose =  require('mongoose')
 
-mongoose.connect('mongodb://localhost:27017/test',{ useNewUrlParser: true })
+const Dbconnect = require('./dbconnect')
 
-
-mongoose.connection.on("connected",function(){
-    console.log("MongoDB connected success.")
-})
-
-// 连接失败操作
-mongoose.connection.on("error",function(){
-    console.log("MongoDB connected fail.")
-})
-
-// 连接断开操作
-mongoose.connection.on("disconnected",function(){
-    console.log("MongoDB connected disconnected.")
-})
+Dbconnect('mongodb://localhost:27017/test')
 
 let Schema = mongoose.Schema
 
