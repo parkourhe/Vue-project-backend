@@ -20,6 +20,14 @@ const image =require('./image')
 
 const url = require('url')
 
+const getthun = require('./getthunimages')
+
+const getGoods = require('./getGoods')
+
+
+var goods = require('../models/goods')
+
+var thunimages = require('../models/thunimages')
 
 var imgComlist  = require('../models/getImgCom')
 
@@ -49,31 +57,45 @@ router.get('/Imglist',(req,res)=>{
 router.get('/comment',(req,res)=>{
 
 	
-	comment.send(req,res,commentList)
+	comment.send(req,res,commentList);
 
-})
+});
 
 router.post('/comment',(req,res)=>{
 
-	PostComment.send(req,res,commentList,url)
+	PostComment.send(req,res,commentList,url);
 
-})
+});
 
 router.get('/getCategory',(req,res)=>{
 
-	Category.send(req,res,CategoryModel)
+	Category.send(req,res,CategoryModel);
 
-})
+});
 
 router.get('/getImage',(req,res)=>{
 
 	image.send(req,res,images)
 
-})
+});
 
 router.get('/getImgCom',(req,res)=>{
 
-	getImgCom.send(req,res,imgComlist)
+	getImgCom.send(req,res,imgComlist);
+
+});
+
+router.get('/getthunimages',(req,res)=>{
+	getthun.send(req,res,thunimages)
+});
+
+router.get('/getGoods',(req,res)=>{
+
+	getGoods.send(req,res,goods)
+
 
 })
+
+
+
 module.exports =router
