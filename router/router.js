@@ -14,11 +14,14 @@ const PostComment = require('./commentsPost')
 
 const Category =  require('./category')
 
+const getImgCom = require('./getImgCom')
+
 const image =require('./image')
 
 const url = require('url')
 
 
+var imgComlist  = require('../models/getImgCom')
 
 var CategoryModel = require('../models/categoryList')
 
@@ -68,4 +71,9 @@ router.get('/getImage',(req,res)=>{
 
 })
 
+router.get('/getImgCom',(req,res)=>{
+
+	getImgCom.send(req,res,imgComlist)
+
+})
 module.exports =router

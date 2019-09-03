@@ -4,9 +4,10 @@ const mongoose =require('mongoose')
 
 Dbconnect('mongodb://localhost:27017/test')
 
+
 let Schema = mongoose.Schema
 
-var imageList = new Schema({
+var imgComList = new Schema({
 	_id:{
 		type: Object
 	},
@@ -16,23 +17,31 @@ var imageList = new Schema({
 
 	},
 	// mongoose.Types.ObjectId(id)
-	img_url:{
-		type:String	
+	add_time:{
+		type:Date	
 
 	},
 
-	zhaiyao:{
+	content:{
 		type:String
 
 	},
 	title:{
 		type:String
 
+	},
+	click:{
+
+		type:String
+
 	}
 
 
 
-})
+},{collection:'imgComs'})
+
+// 可以告诉mongodb你要连接的集合名，不用等它匹配复数
+
+module.exports = mongoose.model('imgCom',imgComList)
 
 
-module.exports=mongoose.model('image',imageList)

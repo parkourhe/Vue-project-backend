@@ -20,3 +20,6 @@ mongoose.connection.on("disconnected",function(){
 
 
 }
+
+
+mongoose.set('useFindAndModify', false)
