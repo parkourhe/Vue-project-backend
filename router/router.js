@@ -24,6 +24,13 @@ const getthun = require('./getthunimages')
 
 const getGoods = require('./getGoods')
 
+const getGoodsInfo = require('./getGoodsInfo')
+
+const getGoodjieshao = require('./getGoodjieshao')
+
+var goodjieshao = require('../models/goodsjieshao')
+
+var goodsInfo = require('../models/goodsInfo')
 
 var goods = require('../models/goods')
 
@@ -97,5 +104,20 @@ router.get('/getGoods',(req,res)=>{
 })
 
 
+router.get('/getGoodsInfo',(req,res)=>{
+
+	getGoodsInfo.send(req,res,goodsInfo)
+
+})
+
+router.get('/getJieshao',(req,res)=>{
+
+	getGoodjieshao.send(req,res,goodjieshao)
+
+})
+
+
 
 module.exports =router
+
+

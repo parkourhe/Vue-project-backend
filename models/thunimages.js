@@ -28,4 +28,5 @@ var getthunList = new Schema({
 
 // 可以告诉mongodb你要连接的集合名，不用等它匹配复数
 
-module.exports = mongoose.model('thunimages',getthunList)
+module.exports= mongoose.model('thunimages',getthunList)
+
