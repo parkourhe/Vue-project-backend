@@ -28,6 +28,8 @@ const getGoodsInfo = require('./getGoodsInfo')
 
 const getGoodjieshao = require('./getGoodjieshao')
 
+const getShopCar =require('./getShopCar')
+
 var goodjieshao = require('../models/goodsjieshao')
 
 var goodsInfo = require('../models/goodsInfo')
@@ -113,6 +115,12 @@ router.get('/getGoodsInfo',(req,res)=>{
 router.get('/getJieshao',(req,res)=>{
 
 	getGoodjieshao.send(req,res,goodjieshao)
+
+})
+
+router.get('/getShopCar',(req,res)=>{
+
+	getShopCar.send(req,res,goods)
 
 })
 
